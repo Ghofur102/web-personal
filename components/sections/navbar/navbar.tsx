@@ -27,13 +27,15 @@ export default function Navbar() {
 
           {/* action */}
           <div className="items-center gap-3 hidden md:flex px-2">
-            <Button
-              variant="default"
-              size="icon"
-              className="rounded-full text-black bg-white "
-            >
-              <Github className="w-5 h-5" />
-            </Button>
+            <a href="https://github.com/Ghofur102">
+              <Button
+                variant="default"
+                size="icon"
+                className="rounded-full text-black bg-white "
+              >
+                <Github className="w-5 h-5" />
+              </Button>
+            </a>
 
             <Button variant="outline" size="sm" className="rounded-full px-4">
               NIGHT

@@ -11,23 +11,26 @@ import TestimonialCard from "../ui/testimonial";
 
 const projects = [
   {
-    title: "Hummacook",
-    job: "Laravel Developer",
-    image: "cookpad.png",
+    title: "PELAJAR",
+    link: "https://desain-pelaporan-jalan.vercel.app/",
+    job: "AI Developer",
+    image: "pelajar.jpg",
     description:
-      "Served as a full-stack developer using Laravel on the Hummacook project, a social media website for sharing cooking recipes. This dummy project was created during a vocational high school internship at PT Humma Technology in 2023.",
+      "Tasked with training a dataset of damaged roads using YOLO then integrating the output into a website using the SPK AHP-TOPSIS method to rank damaged roads which should be repaired first.",
+  },
+  {
+    title: "EcoFlood",
+    link: "https://eco-flood-simulation.vercel.app/",
+    job: "Backend Developer",
+    image: "ecoflood.png",
+    description:
+      "Building a backend by integrating several external API data on natural conditions into a website to predict floods and report natural disaster phenomena using Next JS as backend developer.",
   },
   {
     title: "Hummacook",
+    link: "",
     job: "Laravel Developer",
-    image: "cookpad.png",
-    description:
-      "Served as a full-stack developer using Laravel on the Hummacook project, a social media website for sharing cooking recipes. This dummy project was created during a vocational high school internship at PT Humma Technology in 2023.",
-  },
-  {
-    title: "Hummacook",
-    job: "Laravel Developer",
-    image: "cookpad.png",
+    image: "hummacook.jpg",
     description:
       "Served as a full-stack developer using Laravel on the Hummacook project, a social media website for sharing cooking recipes. This dummy project was created during a vocational high school internship at PT Humma Technology in 2023.",
   },
@@ -35,22 +38,22 @@ const projects = [
 
 const testimonial = [
   {
-    quote: "Best workers, smart and good communication.",
-    name: "Dev",
-    project: "Project Hummacook",
-    avatar: "/avatar/dev.png",
+    quote: "mantap, ga iri irian kalo kerja. siap mengerjakan semuanya.",
+    name: "Dino",
+    project: "Project PELAJAR",
+    avatar: "/avatar/user.jpg",
+  },
+  {
+    quote: "Paling optimis bahkan mau kalo kosnya dipake buat rapat.",
+    name: "Jabir",
+    project: "Project PELAJAR",
+    avatar: "/avatar/user.jpg",
   },
   {
     quote: "Best workers, smart and good communication.",
     name: "Dev",
     project: "Project Hummacook",
-    avatar: "/avatar/dev.png",
-  },
-  {
-    quote: "Best workers, smart and good communication.",
-    name: "Dev",
-    project: "Project Hummacook",
-    avatar: "/avatar/dev.png",
+    avatar: "/avatar/user.jpg",
   },
 ];
 
@@ -90,24 +93,49 @@ export default function Projects() {
             {Array.from(projects).map((data, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
-                  <Card>
-                    <CardContent className="p-2">
-                      <h1 className="mb-3 text-2xl">{data.title}</h1>
-                      <div className="flex justify-center">
-                        <Image
-                          src={`/projects/${data.image}`}
-                          alt="Hummacook App"
-                          width={250}
-                          height={300}
-                        />
-                      </div>
-                      <button className="inline-flex my-3 items-center gap-2 rounded-full border border-white/10 px-4 py-1 text-sm text-muted-foreground">
-                        <span className="text-primary">🤵‍♂️</span>
-                        {data.job}
-                      </button>
-                      <p className="text-sm">{data.description}</p>
-                    </CardContent>
-                  </Card>
+                  {data.link != "" ? (
+                    <a href={data.link}>
+                      <Card>
+                        <CardContent className="p-2">
+                          <h1 className="mb-3 text-2xl">{data.title}</h1>
+                          <div className="flex justify-center">
+                            <Image
+                              src={`/projects/${data.image}`}
+                              alt="Hummacook App"
+                              width={300}
+                              className="rounded-lg h-44 object-cover"
+                              height={350}
+                            />
+                          </div>
+                          <button className="inline-flex my-3 text-white items-center gap-2 rounded-full border border-white px-4 py-1 text-sm">
+                            <span className="text-primary">🤵‍♂️</span>
+                            {data.job}
+                          </button>
+                          <p className="text-sm">{data.description}</p>
+                        </CardContent>
+                      </Card>
+                    </a>
+                  ) : (
+                    <Card>
+                      <CardContent className="p-2">
+                        <h1 className="mb-3 text-2xl">{data.title}</h1>
+                        <div className="flex justify-center">
+                          <Image
+                            src={`/projects/${data.image}`}
+                            alt="Hummacook App"
+                            width={300}
+                            className="rounded-lg h-44 object-cover"
+                            height={350}
+                          />
+                        </div>
+                        <button className="inline-flex my-3 text-white items-center gap-2 rounded-full border border-white px-4 py-1 text-sm">
+                          <span className="text-primary">🤵‍♂️</span>
+                          {data.job}
+                        </button>
+                        <p className="text-sm">{data.description}</p>
+                      </CardContent>
+                    </Card>
+                  )}
                 </div>
               </CarouselItem>
             ))}
@@ -118,7 +146,7 @@ export default function Projects() {
       </div>
       <div className="bg-card p-6 items-center mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
         {Array.from(testimonial).map((data, index) => (
-          <div key={index} className="w-max-lg mx-5 lg:mx-12 xl:mx-18">
+          <div key={index} className="w-max-lg my-3 mx-5 lg:mx-12 xl:mx-18">
             <TestimonialCard
               quote={data.quote}
               name={data.name}

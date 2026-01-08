@@ -3,18 +3,21 @@ import TechCard from "../ui/tech-card";
 const socialMedia = [
   {
     name: "Instagram",
-    role: "@muhamadbadulghofur",
+    role: "@muhamadbadulghofur84",
     icon: "/social-media/ig.png",
+    link: "https://www.instagram.com/muhamadabdulghofur84/"
   },
   {
     name: "Linkedin",
-    role: "@muhamadbabdulghofur",
+    role: "@mabdgpr",
     icon: "/social-media/linkedin.png",
+    link: "https://linkedin.com/in/mabdgpr/"
   },
   {
     name: "Github",
-    role: "@muhamadabdulghofur",
+    role: "@Ghofur102",
     icon: "/social-media/github.png",
+    link: "https://github.com/Ghofur102"
   },
 ];
 
@@ -32,6 +35,7 @@ export default function Footer() {
               name={social.name}
               role={social.role}
               icon={social.icon}
+              link={social.link}
             />
           ))}
         </div>
